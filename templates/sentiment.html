@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block analysis_results %}
+<div class="analysis">
+    <div class="container">
+        <span class="percentage" id="positive">POSITIVE:
+            <strong>{{positive_percentage}}</strong>%
+        </span>
+        <ul class="tweets">
+            {% for tweet in positive_tweets %}
+            <li class="tweet positive">{{ tweet }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="container">
+        <span class="percentage" id="neutral">NEUTRAL:
+            <strong>{{neutral_percentage}}</strong>%
+        </span>
+    </div>
+    <div class="container">
+        <span class="percentage" id="negative">NEGATIVE:
+            <strong>{{negative_percentage}}</strong>%
+        </span>
+        <ul class="tweets">
+            {% for tweet in negative_tweets %}
+            <li class="tweet negative">{{ tweet }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock analysis_results %}
